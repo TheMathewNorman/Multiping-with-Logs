@@ -29,29 +29,36 @@
         private void InitializeComponent()
         {
             this.gbPing = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listLocations = new System.Windows.Forms.ListBox();
+            this.textAddressInput = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.cbGenerateLogs = new System.Windows.Forms.CheckBox();
+            this.cbLogTimestamps = new System.Windows.Forms.CheckBox();
+            this.cbErrorsToSeparateFile = new System.Windows.Forms.CheckBox();
+            this.cbCustomTimeout = new System.Windows.Forms.CheckBox();
+            this.nudTimeout = new System.Windows.Forms.NumericUpDown();
             this.gbPing.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeout)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPing
             // 
-            this.gbPing.Controls.Add(this.button3);
-            this.gbPing.Controls.Add(this.button2);
+            this.gbPing.Controls.Add(this.btnClear);
+            this.gbPing.Controls.Add(this.btnRemove);
             this.gbPing.Controls.Add(this.btnAdd);
             this.gbPing.Controls.Add(this.label1);
-            this.gbPing.Controls.Add(this.listBox1);
-            this.gbPing.Controls.Add(this.textBox1);
+            this.gbPing.Controls.Add(this.listLocations);
+            this.gbPing.Controls.Add(this.textAddressInput);
             this.gbPing.Location = new System.Drawing.Point(12, 12);
             this.gbPing.Name = "gbPing";
             this.gbPing.Size = new System.Drawing.Size(396, 327);
@@ -59,23 +66,23 @@
             this.gbPing.TabStop = false;
             this.gbPing.Text = "Ping";
             // 
-            // button3
+            // btnClear
             // 
-            this.button3.Location = new System.Drawing.Point(310, 94);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(310, 94);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(80, 23);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRemove
             // 
-            this.button2.Location = new System.Drawing.Point(310, 65);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Remove";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRemove.Location = new System.Drawing.Point(310, 65);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(80, 23);
+            this.btnRemove.TabIndex = 4;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
@@ -95,26 +102,31 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "IP Address or Hostname:";
             // 
-            // listBox1
+            // listLocations
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Items.AddRange(new object[] {
+            this.listLocations.FormattingEnabled = true;
+            this.listLocations.ItemHeight = 16;
+            this.listLocations.Items.AddRange(new object[] {
             "127.0.0.1"});
-            this.listBox1.Location = new System.Drawing.Point(6, 65);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(298, 244);
-            this.listBox1.TabIndex = 1;
+            this.listLocations.Location = new System.Drawing.Point(6, 65);
+            this.listLocations.Name = "listLocations";
+            this.listLocations.Size = new System.Drawing.Size(298, 244);
+            this.listLocations.TabIndex = 1;
             // 
-            // textBox1
+            // textAddressInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(169, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 22);
-            this.textBox1.TabIndex = 0;
+            this.textAddressInput.Location = new System.Drawing.Point(169, 21);
+            this.textAddressInput.Name = "textAddressInput";
+            this.textAddressInput.Size = new System.Drawing.Size(135, 22);
+            this.textAddressInput.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.nudTimeout);
+            this.groupBox1.Controls.Add(this.cbCustomTimeout);
+            this.groupBox1.Controls.Add(this.cbErrorsToSeparateFile);
+            this.groupBox1.Controls.Add(this.cbLogTimestamps);
+            this.groupBox1.Controls.Add(this.cbGenerateLogs);
             this.groupBox1.Location = new System.Drawing.Point(414, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(280, 259);
@@ -126,7 +138,7 @@
             // 
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.btnStart);
             this.groupBox2.Location = new System.Drawing.Point(414, 291);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(280, 48);
@@ -152,14 +164,71 @@
             this.button5.Text = "Stop";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnStart
             // 
-            this.button4.Location = new System.Drawing.Point(6, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Start";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnStart.Location = new System.Drawing.Point(6, 19);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(80, 23);
+            this.btnStart.TabIndex = 6;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            // 
+            // cbGenerateLogs
+            // 
+            this.cbGenerateLogs.AutoSize = true;
+            this.cbGenerateLogs.Location = new System.Drawing.Point(6, 50);
+            this.cbGenerateLogs.Name = "cbGenerateLogs";
+            this.cbGenerateLogs.Size = new System.Drawing.Size(112, 20);
+            this.cbGenerateLogs.TabIndex = 0;
+            this.cbGenerateLogs.Text = "Generate logs";
+            this.cbGenerateLogs.UseVisualStyleBackColor = true;
+            this.cbGenerateLogs.CheckedChanged += new System.EventHandler(this.cbGenerateLogs_CheckedChanged);
+            // 
+            // cbLogTimestamps
+            // 
+            this.cbLogTimestamps.AutoSize = true;
+            this.cbLogTimestamps.Location = new System.Drawing.Point(25, 76);
+            this.cbLogTimestamps.Name = "cbLogTimestamps";
+            this.cbLogTimestamps.Size = new System.Drawing.Size(122, 20);
+            this.cbLogTimestamps.TabIndex = 1;
+            this.cbLogTimestamps.Text = "Log timestamps";
+            this.cbLogTimestamps.UseVisualStyleBackColor = true;
+            this.cbLogTimestamps.Visible = false;
+            // 
+            // cbErrorsToSeparateFile
+            // 
+            this.cbErrorsToSeparateFile.AutoSize = true;
+            this.cbErrorsToSeparateFile.Location = new System.Drawing.Point(25, 102);
+            this.cbErrorsToSeparateFile.Name = "cbErrorsToSeparateFile";
+            this.cbErrorsToSeparateFile.Size = new System.Drawing.Size(170, 20);
+            this.cbErrorsToSeparateFile.TabIndex = 3;
+            this.cbErrorsToSeparateFile.Text = "Log errors to another file";
+            this.cbErrorsToSeparateFile.UseVisualStyleBackColor = true;
+            this.cbErrorsToSeparateFile.Visible = false;
+            // 
+            // cbCustomTimeout
+            // 
+            this.cbCustomTimeout.AutoSize = true;
+            this.cbCustomTimeout.Location = new System.Drawing.Point(6, 24);
+            this.cbCustomTimeout.Name = "cbCustomTimeout";
+            this.cbCustomTimeout.Size = new System.Drawing.Size(118, 20);
+            this.cbCustomTimeout.TabIndex = 4;
+            this.cbCustomTimeout.Text = "Custom timeout";
+            this.cbCustomTimeout.UseVisualStyleBackColor = true;
+            this.cbCustomTimeout.CheckedChanged += new System.EventHandler(this.cbCustomTimeout_CheckedChanged);
+            // 
+            // nudTimeout
+            // 
+            this.nudTimeout.Location = new System.Drawing.Point(131, 22);
+            this.nudTimeout.Name = "nudTimeout";
+            this.nudTimeout.Size = new System.Drawing.Size(41, 22);
+            this.nudTimeout.TabIndex = 5;
+            this.nudTimeout.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudTimeout.Visible = false;
             // 
             // formSettings
             // 
@@ -176,7 +245,10 @@
             this.Text = "Ping Settings";
             this.gbPing.ResumeLayout(false);
             this.gbPing.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,17 +256,22 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbPing;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox listLocations;
+        private System.Windows.Forms.TextBox textAddressInput;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.CheckBox cbLogTimestamps;
+        private System.Windows.Forms.CheckBox cbGenerateLogs;
+        private System.Windows.Forms.NumericUpDown nudTimeout;
+        private System.Windows.Forms.CheckBox cbCustomTimeout;
+        private System.Windows.Forms.CheckBox cbErrorsToSeparateFile;
     }
 }
 

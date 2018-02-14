@@ -16,5 +16,35 @@ namespace Ping_with_Logs
         {
             InitializeComponent();
         }
+
+        private void cbGenerateLogs_CheckedChanged(object sender, EventArgs e)
+        {
+            // Update dependant option visibility.
+            if (cbGenerateLogs.Checked)
+            {
+                cbLogTimestamps.Visible = true;
+                cbErrorsToSeparateFile.Visible = true;
+            }
+            else
+            {
+                cbLogTimestamps.Visible = false;
+                cbErrorsToSeparateFile.Visible = false;
+            }
+
+
+        }
+
+        private void cbCustomTimeout_CheckedChanged(object sender, EventArgs e)
+        {
+            // Update dependant option visibility.
+            if (cbCustomTimeout.Checked)
+            {
+                nudTimeout.Visible = true;
+            }
+            else
+            {   
+                nudTimeout.Visible = false;
+            }
+        }
     }
 }
