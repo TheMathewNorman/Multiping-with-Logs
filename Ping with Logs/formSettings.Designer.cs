@@ -36,19 +36,19 @@
             this.listLocations = new System.Windows.Forms.ListBox();
             this.textAddressInput = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.cbGenerateLogs = new System.Windows.Forms.CheckBox();
-            this.cbLogTimestamps = new System.Windows.Forms.CheckBox();
-            this.cbErrorsToSeparateFile = new System.Windows.Forms.CheckBox();
-            this.cbCustomTimeout = new System.Windows.Forms.CheckBox();
             this.nudTimeout = new System.Windows.Forms.NumericUpDown();
+            this.cbCustomTimeout = new System.Windows.Forms.CheckBox();
+            this.cbLogErrorsToSeparateFile = new System.Windows.Forms.CheckBox();
+            this.cbLogTimestamps = new System.Windows.Forms.CheckBox();
+            this.cbGenerateLogs = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.gbPing.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeout)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbPing
@@ -92,6 +92,7 @@
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
@@ -124,7 +125,7 @@
             // 
             this.groupBox1.Controls.Add(this.nudTimeout);
             this.groupBox1.Controls.Add(this.cbCustomTimeout);
-            this.groupBox1.Controls.Add(this.cbErrorsToSeparateFile);
+            this.groupBox1.Controls.Add(this.cbLogErrorsToSeparateFile);
             this.groupBox1.Controls.Add(this.cbLogTimestamps);
             this.groupBox1.Controls.Add(this.cbGenerateLogs);
             this.groupBox1.Location = new System.Drawing.Point(414, 12);
@@ -133,89 +134,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.btnStart);
-            this.groupBox2.Location = new System.Drawing.Point(414, 291);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(280, 48);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Controls";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(194, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Exit";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(92, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 23);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Stop";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // btnStart
-            // 
-            this.btnStart.Location = new System.Drawing.Point(6, 19);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(80, 23);
-            this.btnStart.TabIndex = 6;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
-            // 
-            // cbGenerateLogs
-            // 
-            this.cbGenerateLogs.AutoSize = true;
-            this.cbGenerateLogs.Location = new System.Drawing.Point(6, 50);
-            this.cbGenerateLogs.Name = "cbGenerateLogs";
-            this.cbGenerateLogs.Size = new System.Drawing.Size(112, 20);
-            this.cbGenerateLogs.TabIndex = 0;
-            this.cbGenerateLogs.Text = "Generate logs";
-            this.cbGenerateLogs.UseVisualStyleBackColor = true;
-            this.cbGenerateLogs.CheckedChanged += new System.EventHandler(this.cbGenerateLogs_CheckedChanged);
-            // 
-            // cbLogTimestamps
-            // 
-            this.cbLogTimestamps.AutoSize = true;
-            this.cbLogTimestamps.Location = new System.Drawing.Point(25, 76);
-            this.cbLogTimestamps.Name = "cbLogTimestamps";
-            this.cbLogTimestamps.Size = new System.Drawing.Size(122, 20);
-            this.cbLogTimestamps.TabIndex = 1;
-            this.cbLogTimestamps.Text = "Log timestamps";
-            this.cbLogTimestamps.UseVisualStyleBackColor = true;
-            this.cbLogTimestamps.Visible = false;
-            // 
-            // cbErrorsToSeparateFile
-            // 
-            this.cbErrorsToSeparateFile.AutoSize = true;
-            this.cbErrorsToSeparateFile.Location = new System.Drawing.Point(25, 102);
-            this.cbErrorsToSeparateFile.Name = "cbErrorsToSeparateFile";
-            this.cbErrorsToSeparateFile.Size = new System.Drawing.Size(170, 20);
-            this.cbErrorsToSeparateFile.TabIndex = 3;
-            this.cbErrorsToSeparateFile.Text = "Log errors to another file";
-            this.cbErrorsToSeparateFile.UseVisualStyleBackColor = true;
-            this.cbErrorsToSeparateFile.Visible = false;
-            // 
-            // cbCustomTimeout
-            // 
-            this.cbCustomTimeout.AutoSize = true;
-            this.cbCustomTimeout.Location = new System.Drawing.Point(6, 24);
-            this.cbCustomTimeout.Name = "cbCustomTimeout";
-            this.cbCustomTimeout.Size = new System.Drawing.Size(118, 20);
-            this.cbCustomTimeout.TabIndex = 4;
-            this.cbCustomTimeout.Text = "Custom timeout";
-            this.cbCustomTimeout.UseVisualStyleBackColor = true;
-            this.cbCustomTimeout.CheckedChanged += new System.EventHandler(this.cbCustomTimeout_CheckedChanged);
             // 
             // nudTimeout
             // 
@@ -229,6 +147,90 @@
             0,
             0});
             this.nudTimeout.Visible = false;
+            // 
+            // cbCustomTimeout
+            // 
+            this.cbCustomTimeout.AutoSize = true;
+            this.cbCustomTimeout.Location = new System.Drawing.Point(6, 24);
+            this.cbCustomTimeout.Name = "cbCustomTimeout";
+            this.cbCustomTimeout.Size = new System.Drawing.Size(118, 20);
+            this.cbCustomTimeout.TabIndex = 4;
+            this.cbCustomTimeout.Text = "Custom timeout";
+            this.cbCustomTimeout.UseVisualStyleBackColor = true;
+            this.cbCustomTimeout.CheckedChanged += new System.EventHandler(this.cbCustomTimeout_CheckedChanged);
+            // 
+            // cbLogErrorsToSeparateFile
+            // 
+            this.cbLogErrorsToSeparateFile.AutoSize = true;
+            this.cbLogErrorsToSeparateFile.Location = new System.Drawing.Point(25, 102);
+            this.cbLogErrorsToSeparateFile.Name = "cbLogErrorsToSeparateFile";
+            this.cbLogErrorsToSeparateFile.Size = new System.Drawing.Size(170, 20);
+            this.cbLogErrorsToSeparateFile.TabIndex = 3;
+            this.cbLogErrorsToSeparateFile.Text = "Log errors to another file";
+            this.cbLogErrorsToSeparateFile.UseVisualStyleBackColor = true;
+            this.cbLogErrorsToSeparateFile.Visible = false;
+            // 
+            // cbLogTimestamps
+            // 
+            this.cbLogTimestamps.AutoSize = true;
+            this.cbLogTimestamps.Location = new System.Drawing.Point(25, 76);
+            this.cbLogTimestamps.Name = "cbLogTimestamps";
+            this.cbLogTimestamps.Size = new System.Drawing.Size(122, 20);
+            this.cbLogTimestamps.TabIndex = 1;
+            this.cbLogTimestamps.Text = "Log timestamps";
+            this.cbLogTimestamps.UseVisualStyleBackColor = true;
+            this.cbLogTimestamps.Visible = false;
+            // 
+            // cbGenerateLogs
+            // 
+            this.cbGenerateLogs.AutoSize = true;
+            this.cbGenerateLogs.Location = new System.Drawing.Point(6, 50);
+            this.cbGenerateLogs.Name = "cbGenerateLogs";
+            this.cbGenerateLogs.Size = new System.Drawing.Size(112, 20);
+            this.cbGenerateLogs.TabIndex = 0;
+            this.cbGenerateLogs.Text = "Generate logs";
+            this.cbGenerateLogs.UseVisualStyleBackColor = true;
+            this.cbGenerateLogs.CheckedChanged += new System.EventHandler(this.cbGenerateLogs_CheckedChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnExit);
+            this.groupBox2.Controls.Add(this.btnStop);
+            this.groupBox2.Controls.Add(this.btnStart);
+            this.groupBox2.Location = new System.Drawing.Point(414, 291);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(280, 48);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Controls";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(194, 19);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(80, 23);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(92, 19);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(80, 23);
+            this.btnStop.TabIndex = 7;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Visible = false;
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(6, 19);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(80, 23);
+            this.btnStart.TabIndex = 6;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
             // 
             // formSettings
             // 
@@ -247,8 +249,8 @@
             this.gbPing.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeout)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -264,14 +266,14 @@
         private System.Windows.Forms.TextBox textAddressInput;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.CheckBox cbLogTimestamps;
         private System.Windows.Forms.CheckBox cbGenerateLogs;
         private System.Windows.Forms.NumericUpDown nudTimeout;
         private System.Windows.Forms.CheckBox cbCustomTimeout;
-        private System.Windows.Forms.CheckBox cbErrorsToSeparateFile;
+        private System.Windows.Forms.CheckBox cbLogErrorsToSeparateFile;
     }
 }
 

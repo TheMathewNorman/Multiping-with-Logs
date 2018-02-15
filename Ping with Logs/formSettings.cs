@@ -23,12 +23,12 @@ namespace Ping_with_Logs
             if (cbGenerateLogs.Checked)
             {
                 cbLogTimestamps.Visible = true;
-                cbErrorsToSeparateFile.Visible = true;
+                cbLogErrorsToSeparateFile.Visible = true;
             }
             else
             {
                 cbLogTimestamps.Visible = false;
-                cbErrorsToSeparateFile.Visible = false;
+                cbLogErrorsToSeparateFile.Visible = false;
             }
 
 
@@ -45,6 +45,11 @@ namespace Ping_with_Logs
             {   
                 nudTimeout.Visible = false;
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
