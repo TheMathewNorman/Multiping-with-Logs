@@ -9,51 +9,31 @@ namespace Ping_with_Logs
 {
     class HostnameOrIP
     {
-
-        /// <summary>
-        /// Validates a Hostname
-        /// </summary>
-        /// <param name="input">User input from the "Add" section on the settings form.</param>
-        /// <returns>True or false based on the validity of the input.</returns>
-        private bool validateHostname(string input)
-        {
-            var illegalCharactersPattern = @"[^A-z0-9-]"; // Matches only legal hostname chars
-            
-            
-            bool isValidHostname = false;
-
-            // Validate that no illegal characters are contained within the input.
-            isValidHostname = !Regex.IsMatch(input, illegalCharactersPattern);
-
-            return isValidHostname;
-        }
-
-        /// <summary>
-        /// Validates an IP Address
-        /// </summary>
-        /// <param name="input">User input fromt he "Add" section on the settings form.</param>
-        /// <returns>True or false based on the validity of the input.</returns>
-        private bool validateIPAddress(string input)
-        {
-            // Validate IP Addresses using System.Net.IPAddress
-            IPAddress address;
-            return IPAddress.TryParse(input, out address);
-        }
-
-
         /// <summary>
         /// Retruns a boolean based on the validity of a user inputted address.
         /// </summary>
-        /// <param name="input">User input fromt he "Add" section on the settings form.</param>
+        /// <param name="input">String to be validated</param>
         /// <param name="address">IP Address or Hostname where valid, empty string where invalid.</param>
         /// <returns>True or false based on the validity of the input.</returns>
         public bool TryParse(string input, out string address)
         {
+            // Valid IP address pattern
+            var IPAddressPattern = @"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$";
+            // Valid hostname pattern
+            var HostnamePattern = @"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$";
+
             bool isValidHostnameOrIP = false;
-
-
             address = "";
+
+            // Validate input against regex patterns for ip addresses and hostnames.
+            if (Regex.IsMatch(input, IPAddressPattern) || Regex.IsMatch(input, HostnamePattern))
+            {
+                isValidHostnameOrIP = true;
+                address = input;
+            }
+
             return isValidHostnameOrIP;
+            
         }
     }
 }

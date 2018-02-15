@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -49,7 +50,29 @@ namespace Ping_with_Logs
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            HostnameOrIP hi = new HostnameOrIP();
+            string address;
+       
+            // Validate the users input
+            if (hi.TryParse(textAddressInput.Text, out address))
+                listLocations.Items.Add(address);
+            else
+                MessageBox.Show(textAddressInput.Text + " is not a valid IP address or hostname.", "Error");
 
+            // Clear the input box
+            textAddressInput.Text = "";
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            // Remove the currently selected item from the locations list
+            listLocations.Items.Remove(listLocations.SelectedItem);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            // Empty the locations list
+            listLocations.Items.Clear();
         }
     }
 }
