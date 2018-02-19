@@ -71,7 +71,7 @@
             this.btnClear.Location = new System.Drawing.Point(310, 94);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(80, 23);
-            this.btnClear.TabIndex = 5;
+            this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -81,7 +81,7 @@
             this.btnRemove.Location = new System.Drawing.Point(310, 65);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(80, 23);
-            this.btnRemove.TabIndex = 4;
+            this.btnRemove.TabIndex = 3;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -91,7 +91,7 @@
             this.btnAdd.Location = new System.Drawing.Point(310, 21);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(80, 23);
-            this.btnAdd.TabIndex = 3;
+            this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -114,7 +114,7 @@
             this.listLocations.Location = new System.Drawing.Point(6, 65);
             this.listLocations.Name = "listLocations";
             this.listLocations.Size = new System.Drawing.Size(298, 244);
-            this.listLocations.TabIndex = 1;
+            this.listLocations.TabIndex = 12;
             // 
             // textAddressInput
             // 
@@ -156,7 +156,7 @@
             this.cbCustomTimeout.Location = new System.Drawing.Point(6, 24);
             this.cbCustomTimeout.Name = "cbCustomTimeout";
             this.cbCustomTimeout.Size = new System.Drawing.Size(118, 20);
-            this.cbCustomTimeout.TabIndex = 4;
+            this.cbCustomTimeout.TabIndex = 5;
             this.cbCustomTimeout.Text = "Custom timeout";
             this.cbCustomTimeout.UseVisualStyleBackColor = true;
             this.cbCustomTimeout.CheckedChanged += new System.EventHandler(this.cbCustomTimeout_CheckedChanged);
@@ -167,7 +167,7 @@
             this.cbLogErrorsToSeparateFile.Location = new System.Drawing.Point(25, 102);
             this.cbLogErrorsToSeparateFile.Name = "cbLogErrorsToSeparateFile";
             this.cbLogErrorsToSeparateFile.Size = new System.Drawing.Size(170, 20);
-            this.cbLogErrorsToSeparateFile.TabIndex = 3;
+            this.cbLogErrorsToSeparateFile.TabIndex = 8;
             this.cbLogErrorsToSeparateFile.Text = "Log errors to another file";
             this.cbLogErrorsToSeparateFile.UseVisualStyleBackColor = true;
             this.cbLogErrorsToSeparateFile.Visible = false;
@@ -178,7 +178,7 @@
             this.cbLogTimestamps.Location = new System.Drawing.Point(25, 76);
             this.cbLogTimestamps.Name = "cbLogTimestamps";
             this.cbLogTimestamps.Size = new System.Drawing.Size(122, 20);
-            this.cbLogTimestamps.TabIndex = 1;
+            this.cbLogTimestamps.TabIndex = 7;
             this.cbLogTimestamps.Text = "Log timestamps";
             this.cbLogTimestamps.UseVisualStyleBackColor = true;
             this.cbLogTimestamps.Visible = false;
@@ -189,7 +189,7 @@
             this.cbGenerateLogs.Location = new System.Drawing.Point(6, 50);
             this.cbGenerateLogs.Name = "cbGenerateLogs";
             this.cbGenerateLogs.Size = new System.Drawing.Size(112, 20);
-            this.cbGenerateLogs.TabIndex = 0;
+            this.cbGenerateLogs.TabIndex = 6;
             this.cbGenerateLogs.Text = "Generate logs";
             this.cbGenerateLogs.UseVisualStyleBackColor = true;
             this.cbGenerateLogs.CheckedChanged += new System.EventHandler(this.cbGenerateLogs_CheckedChanged);
@@ -211,16 +211,17 @@
             this.btnExit.Location = new System.Drawing.Point(194, 19);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(80, 23);
-            this.btnExit.TabIndex = 8;
+            this.btnExit.TabIndex = 11;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnStop
             // 
             this.btnStop.Location = new System.Drawing.Point(92, 19);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(80, 23);
-            this.btnStop.TabIndex = 7;
+            this.btnStop.TabIndex = 10;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Visible = false;
@@ -230,7 +231,7 @@
             this.btnStart.Location = new System.Drawing.Point(6, 19);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(80, 23);
-            this.btnStart.TabIndex = 6;
+            this.btnStart.TabIndex = 9;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             // 

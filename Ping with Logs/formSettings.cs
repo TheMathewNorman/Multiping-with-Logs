@@ -74,5 +74,10 @@ namespace Ping_with_Logs
             // Empty the locations list
             listLocations.Items.Clear();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
